@@ -1,8 +1,13 @@
 import React from 'react';
 import './App.css';
+import VulnerabilitiesPage from './pages/vulnerabilities/vulnerabilities';
 
 function App() {
-  return <h1>Vulnerability Manager</h1>;
+  return (
+    <>
+      <VulnerabilitiesPage />
+    </>
+  );
 }
 
 export default App;
