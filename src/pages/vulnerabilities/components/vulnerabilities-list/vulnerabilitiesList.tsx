@@ -1,15 +1,9 @@
 import React from 'react';
 import VulnerabilityItem from '../vulnerability-item/vulnerabilityItem';
-import { Vulnerability } from '../../../../types/models/vulnerability';
+import { VulnerabilitiesListProps } from './vulnerabilitiesList.types';
 import { Table } from 'react-bootstrap';
 
-interface VulnerabilitiesListProps {
-  data: Vulnerability[];
-}
-
-const VulnerabilitiesList = ({
-  data,
-}: VulnerabilitiesListProps): React.JSX.Element => {
+const VulnerabilitiesList = ({ data }: VulnerabilitiesListProps): React.JSX.Element => {
   return (
     <Table striped bordered hover responsive size="sm">
       <thead>
