@@ -1,4 +1,3 @@
-// VulnerabilitiesList.tsx
 import React from 'react';
 import VulnerabilityItem from '../vulnerability-item/vulnerabilityItem';
 import { Vulnerability } from '../../../../types/models/vulnerability';
@@ -15,11 +14,13 @@ const VulnerabilitiesList = ({
     <Table striped bordered hover responsive size="sm">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Title</th>
           <th>Severity</th>
-          <th>Status</th>
+          <th>Title</th>
+          <th>Targets</th>
+          <th>Source</th>
           <th>Tags</th>
+          <th>Date</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>

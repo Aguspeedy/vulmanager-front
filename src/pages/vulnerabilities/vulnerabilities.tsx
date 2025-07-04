@@ -1,18 +1,10 @@
 import React from 'react';
-import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
+import { Spinner } from 'react-bootstrap';
+
 import VulnerabilitiesList from './components/vulnerabilities-list/vulnerabilitiesList';
 import { Vulnerability } from '../../types/models/vulnerability';
-
-const api = axios.create({
-  baseURL: 'http://localhost:4000',
-  headers: { 'Content-Type': 'application/json' },
-});
-
-async function fetchVulnerabilities(): Promise<Vulnerability[]> {
-  const res = await api.get<Vulnerability[]>('/vulnerabilities');
-  return res.data;
-}
+import { fetchVulnerabilities } from '../../services/vulnerabilitiesService';
 
 const VulnerabilitiesPage = (): React.JSX.Element => {
   const { data, isLoading, isError, error, isFetching } = useQuery<
@@ -31,9 +23,9 @@ const VulnerabilitiesPage = (): React.JSX.Element => {
 
       {isLoading || isFetching ? (
         <div className="text-center py-5">
-          <div className="spinner-border" role="status">
+          <Spinner animation="grow">
             <span className="visually-hidden">Loading...</span>
-          </div>
+          </Spinner>
         </div>
       ) : isError ? (
         <div className="alert alert-danger" role="alert">
