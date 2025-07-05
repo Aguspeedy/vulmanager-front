@@ -1,6 +1,6 @@
 import api from './client';
 import type { Vulnerability, VulnerabilityInsert } from '../types/models/vulnerability';
-import { ResponseType } from '../types/response.types';
+import { VulnerabilityResponseType } from '../types/vulnerabilityResponse.types';
 
 export async function fetchVulnerabilities(
   page: number,
@@ -8,8 +8,8 @@ export async function fetchVulnerabilities(
   sortBy?: string,
   sortOrder?: string,
   filters?: Record<string, any>
-): Promise<ResponseType> {
-  const res = await api.get<ResponseType>('/vulnerabilities', {
+): Promise<VulnerabilityResponseType> {
+  const res = await api.get<VulnerabilityResponseType>('/vulnerabilities', {
     params: { page, pageSize, sortBy, sortOrder, filters: JSON.stringify(filters) },
   });
   return res.data;

@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Button, Spinner } from 'react-bootstrap';
 
 import VulnerabilitiesList from './components/vulnerabilities-list/vulnerabilitiesList';
-import { ResponseType } from '../../types/response.types';
+import { VulnerabilityResponseType } from '../../types/vulnerabilityResponse.types';
 import { fetchVulnerabilities } from '../../services/vulnerabilitiesService';
 import {
   VulnerabilityModalContextProvider,
@@ -14,6 +14,7 @@ import { useDebounce } from '../../hooks/useDebounce';
 import { Filters } from '../../types/filters.types';
 import { VulnerabilitiesToolbar } from './components/vulnerabilities-toolbar/vulnerabilitiesToolbar';
 import { PageSizeSelector } from '../../components/page-size-selector/pageSizeSelector';
+import { useLogout } from '../../hooks/useLogout';
 
 const Vulnerabilities = (): React.JSX.Element => {
   const { openEditor } = useVulnerabilityModal();
@@ -24,7 +25,12 @@ const Vulnerabilities = (): React.JSX.Element => {
   const [filters, setFilters] = useState<Filters>({});
   const debouncedFilters = useDebounce(filters, 500);
 
-  const { data, isLoading, isError, error, isFetching } = useQuery<ResponseType, Error>({
+  const { mutate: logout } = useLogout();
+
+  const { data, isLoading, isError, error, isFetching } = useQuery<
+    VulnerabilityResponseType,
+    Error
+  >({
     queryKey: ['vulnerabilities', page, pageSize, sortBy, sortOrder, debouncedFilters],
     queryFn: () => fetchVulnerabilities(page, pageSize, sortBy, sortOrder, debouncedFilters),
     staleTime: 5 * 60 * 1000,
@@ -34,7 +40,17 @@ const Vulnerabilities = (): React.JSX.Element => {
   return (
     <>
       <div className="px-5 py-4 w-100">
-        <h1 className="mb-2">Vulnerabilities</h1>
+        <div className="d-flex justify-content-between">
+          <h1 className="mb-2">Vulnerabilities</h1>
+          <Button
+            size="sm"
+            className="border-0 sm-height"
+            variant="danger"
+            onClick={() => logout()}
+          >
+            Logout
+          </Button>
+        </div>
         <hr className="mt-0 mb-4" />
         <div className="d-flex justify-content-between align-items-center mb-3">
           <VulnerabilitiesToolbar

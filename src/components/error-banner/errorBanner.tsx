@@ -1,21 +1,29 @@
+import { useState, useEffect } from 'react';
 import { Alert } from 'react-bootstrap';
+
+import './errorBanner.css';
 import { ErrorBannerProps } from './errorBanner.types';
 
 export const ErrorBanner = ({ message }: ErrorBannerProps) => {
+  const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!show) return null;
+
   return (
     <Alert
       variant="danger"
       dismissible
-      className="position-absolute"
-      style={{
-        width: 350,
-        bottom: 20,
-        left: '100%',
-        transform: 'translateX(-100%)',
-        zIndex: 10000,
-      }}
+      className="position-absolute pb-2 error-banner"
+      onClose={() => setShow(false)}
     >
-      <Alert.Heading>Error!</Alert.Heading>
       <p>{message}</p>
     </Alert>
   );
