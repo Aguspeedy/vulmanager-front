@@ -15,7 +15,7 @@ import { Filters } from '../../types/filters.types';
 import { VulnerabilitiesToolbar } from './components/vulnerabilities-toolbar/vulnerabilitiesToolbar';
 import { PageSizeSelector } from '../../components/page-size-selector/pageSizeSelector';
 
-const VulnerabilitiesPage = (): React.JSX.Element => {
+const Vulnerabilities = (): React.JSX.Element => {
   const { openEditor } = useVulnerabilityModal();
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -48,7 +48,7 @@ const VulnerabilitiesPage = (): React.JSX.Element => {
           <Button
             onClick={() => openEditor(null)}
             size="sm"
-            className="primary-color"
+            className="primary-color border-0 sm-height"
             style={{ minWidth: 130 }}
           >
             Add Vulnerability
@@ -87,10 +87,10 @@ const VulnerabilitiesPage = (): React.JSX.Element => {
   );
 };
 
-export default function VulnerabilitiesPageContext(props: any) {
+export default function VulnerabilitiesPage(props: any) {
   return (
     <VulnerabilityModalContextProvider>
-      <VulnerabilitiesPage {...props} />
+      <Vulnerabilities {...props} />
     </VulnerabilityModalContextProvider>
   );
 }

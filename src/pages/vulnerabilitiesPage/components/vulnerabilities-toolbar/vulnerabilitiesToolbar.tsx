@@ -1,17 +1,17 @@
-import React from 'react';
+import { JSX } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
 import * as Enums from '../../../../types/enums';
 import { VulnerabilitiesToolbarProps } from './vulnerabilitiesToolbar.types';
 
-export function VulnerabilitiesToolbar({
+export const VulnerabilitiesToolbar = ({
   sortBy,
   sortOrder,
   filters,
   onSortByChange,
   onSortOrderToggle,
   onFiltersChange,
-}: VulnerabilitiesToolbarProps) {
+}: VulnerabilitiesToolbarProps): JSX.Element => {
   return (
     <Form className="d-flex align-items-center gap-2 flex-wrap">
       <Form.Control
@@ -99,4 +99,4 @@ export function VulnerabilitiesToolbar({
       </Form.Group>
     </Form>
   );
-}
+};

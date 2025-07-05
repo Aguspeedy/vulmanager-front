@@ -1,5 +1,7 @@
 import React from 'react';
 import Pagination from 'react-bootstrap/Pagination';
+
+import './appPagination.css';
 import { AppPaginationProps } from './appPagination.types';
 
 export function AppPagination({ currentPage, totalPages, onPageChange }: AppPaginationProps) {

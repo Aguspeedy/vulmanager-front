@@ -1,4 +1,3 @@
-// VulnerabilityModalContext.tsx
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 import { Vulnerability } from '../types/models/vulnerability';
 import VulnerabilityModal from '../components/vulnerability-modal/vulnerabilityModal';

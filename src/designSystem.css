@@ -1,16 +1,11 @@
 :root {
-  --primary: #25408f;
-  --secondary: #646464;
-  --success: #8edd94;
-  --info: #cabdf6;
-  --warning: #f7d07e;
-  --danger: #e79a82;
-  --critcial: #170202;
-
+  --primary: #233b86;
+  --secondary: #6c757d;
   --background: #f7f7fb;
   --text-primary: #222222;
   --text-secondary: #444444;
   --border: #ebeef1;
+  --disabled: #dedede;
 
   --sm-height: 31px;
 }
@@ -21,6 +16,10 @@
 
 .primary-color {
   background-color: var(--primary);
+}
+
+.secondary-color {
+  background-color: var(--secondary);
 }
 
 .sm-height {
