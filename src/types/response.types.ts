@@ -4,4 +4,5 @@ export interface ResponseType {
   data: Vulnerability[];
   page: number;
   pageSize: number;
+  totalPages: number;
 }

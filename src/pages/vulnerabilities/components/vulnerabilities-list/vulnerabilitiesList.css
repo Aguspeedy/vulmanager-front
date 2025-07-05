@@ -1,0 +1,12 @@
+.vul-table th,
+.vul-table td {
+  color: var(--text-primary) !important;
+}
+
+.vul-table tr {
+  border-color: var(--border);
+}
+
+.vul-table td {
+  font-size: 14px;
+}
