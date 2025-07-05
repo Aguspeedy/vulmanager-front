@@ -1,0 +1,27 @@
+:root {
+  --primary: #233b86;
+  --secondary: #6c757d;
+  --background: #f7f7fb;
+  --text-primary: #222222;
+  --text-secondary: #444444;
+  --border: #ebeef1;
+  --disabled: #dedede;
+
+  --sm-height: 31px;
+}
+
+.app-background {
+  background-color: var(--background);
+}
+
+.primary-color {
+  background-color: var(--primary);
+}
+
+.secondary-color {
+  background-color: var(--secondary);
+}
+
+.sm-height {
+  height: var(--sm-height);
+}
