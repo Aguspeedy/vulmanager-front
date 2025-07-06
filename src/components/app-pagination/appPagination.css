@@ -1,0 +1,30 @@
+.page-item {
+  width: 35px;
+  text-align: center;
+}
+
+/* Change base button color */
+.page-item .page-link {
+  background-color: #ffffff; /* light cyan */
+  color: var(--text-primary);
+}
+
+/* Hover effect */
+.page-item .page-link:hover {
+  background-color: #233b86;
+  color: #ffffff !important;
+}
+
+/* Active item */
+.page-item.active .page-link {
+  background-color: var(--primary) !important;
+  border-color: var(--primary);
+  color: #ffffff !important;
+}
+
+/* Disabled (prev/next when not available) */
+.page-item.disabled .page-link {
+  background-color: var(--disabled);
+  color: var(--text-primary);
+  pointer-events: none;
+}

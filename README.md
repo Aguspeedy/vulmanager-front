@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# Vulnerability Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Create, edit, and track your project’s vulnerabilities with ease.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Table of Contents
 
-### `npm start`
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Configuration](#configuration)
+- [Architecture & Data Flow](#architecture--data-flow)
+- [API Endpoints](#api-endpoints)
+- [Linting & Formatting](#linting--formatting)
+- [Building & Deployment](#building--deployment)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **React** + **TypeScript**
+- **UI**: React Bootstrap, Bootstrap Icons
+- **State & Data Fetching**: TanStack Query
+- **HTTP Calls**: Axios
+- **Routing**: React Router
+- **Tooling**: Prettier, ESLint
+- **Deployment**: GitHub Pages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Learn how React and TypeScript bring type-safety and maintainability to modern apps.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **src/**
+  - **components/**
+  - **contexts/**
+  - **hooks/**
+  - **pages/**
+  - **services/**
+  - **types/**
+  - **utils/**
+  - `App.tsx`
+  - `index.tsx`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **components/**: reusable UI widgets
+- **contexts/**: global state providers (e.g. auth)
+- **hooks/**: custom hooks (e.g. useVulnerabilities)
+- **pages/**: route-based views
+- **services/**: Axios-based API wrappers
+- **types/**: shared TypeScript interfaces
+- **utils/**: helper functions and constants
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Node.js ≥ 20
+- npm (latest)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
+clone repo
+cd vulnerability-manager
+npm install
+npm run dev
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Configuration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create .env using .env.example:
 
-### Code Splitting
+REACT_APP_API_URL=https://backend-url.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This configures Axios base URL.
 
-### Analyzing the Bundle Size
+## Architecture & Data Flow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **TanStack Query** handles data fetching, caching, loading/error states, background refetching, and request deduplication—reducing boilerplate and improving performance through smart caching strategies
+- **Axios** in `services/` manages HTTP communication with the backend.
+- **React Router** defines client-side routes—mapping views
 
-### Making a Progressive Web App
+## API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+All communication occurs with a separate backend:
 
-### Advanced Configuration
+| Method | Endpoint           | Description                   |
+| ------ | ------------------ | ----------------------------- |
+| POST   | `/auth`            | User login                    |
+| GET    | `/auth/me`         | Retrieve current user profile |
+| GET    | `/vulnerabilities` | List all vulnerabilities      |
+| POST   | `/vulnerabilities` | Create a new vulnerability    |
+| PUT    | `/vulnerabilities` | Update vulnerability details  |
+| POST   | `/logout`          | Log out the current user      |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Linting & Formatting
 
-### Deployment
+- **ESLint** ensures code quality and consistency by identifying problematic patterns and enforcing coding standards across the codebase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Prettier** auto-formats code on save, ensuring consistent code styling across your project. It eliminates the need for manual formatting.
 
-### `npm run build` fails to minify
+## Build & Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To build and deploy your React app:
+
+1. **Build the project**:
+
+   npm run build
+
+2. **Deploy the project to Github Pages**:
+
+   npm run deploy
