@@ -13,7 +13,7 @@ Create, edit, and track your project’s vulnerabilities with ease.
 - [Architecture & Data Flow](#architecture--data-flow)
 - [API Endpoints](#api-endpoints)
 - [Linting & Formatting](#linting--formatting)
-- [Building & Deployment](#building--deployment)
+- [Building & Deployment](#build--deployment)
 
 ---
 
@@ -66,7 +66,7 @@ Learn how React and TypeScript bring type-safety and maintainability to modern a
 clone repo
 cd vulnerability-manager
 npm install
-npm run dev
+npm start
 
 ## Configuration
 
