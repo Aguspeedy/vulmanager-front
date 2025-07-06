@@ -1,5 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap';
-@import url('./designSystem.css');
+@import url('./utils/designSystem.css');
 
 body {
   margin: 0;

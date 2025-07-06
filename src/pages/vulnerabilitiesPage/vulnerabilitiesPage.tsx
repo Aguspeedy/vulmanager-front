@@ -8,7 +8,7 @@ import { fetchVulnerabilities } from '../../services/vulnerabilitiesService';
 import {
   VulnerabilityModalContextProvider,
   useVulnerabilityModal,
-} from '../../context/vulnerabilitiesModalContext';
+} from '../../contexts/vulnerabilitiesModalContext';
 import { AppPagination } from '../../components/app-pagination/appPagination';
 import { useDebounce } from '../../hooks/useDebounce';
 import { Filters } from '../../types/filters.types';
