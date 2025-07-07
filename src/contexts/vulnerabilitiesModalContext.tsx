@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
-import { Vulnerability } from '../types/models/vulnerability';
+import { Vulnerability } from '../types/models/vulnerability.types';
 import VulnerabilityModal from '../components/vulnerability-modal/vulnerabilityModal';
 
 interface ModalContextValue {
