@@ -13,7 +13,7 @@ Create, edit, and track your project’s vulnerabilities with ease.
 - [Architecture & Data Flow](#architecture--data-flow)
 - [API Endpoints](#api-endpoints)
 - [Linting & Formatting](#linting--formatting)
-- [Building & Deployment](#build--deployment)
+- [Images & Deployment](#images--deployment)
 
 ---
 
@@ -101,14 +101,18 @@ All communication occurs with a separate backend:
 
 - **Prettier** auto-formats code on save, ensuring consistent code styling across your project. It eliminates the need for manual formatting.
 
-## Build & Deployment
+## Images & Deployment
 
-To build and deploy your React app:
+To build and deploy the app:
 
-1. **Build the project**:
+**Build the Docker image and run it**:
 
-   npm run build
+`docker compose build`
 
-2. **Deploy the project to Github Pages**:
+`docker compose up`
 
-   npm run deploy
+**Deployment**:
+
+The side is deployed to Render, and is live in the following link:
+
+https://vulmanager-front.onrender.com
