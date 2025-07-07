@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { logout } from '../services/authService';
 import { useNavigate } from 'react-router';
 
-export const useLogout = () => {
+const useLogout = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -18,3 +18,5 @@ export const useLogout = () => {
     },
   });
 };
+
+export default useLogout;

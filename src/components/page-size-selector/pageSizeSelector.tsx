@@ -1,7 +1,7 @@
 import { Form } from 'react-bootstrap';
 import { PageSizeSelectorProps } from './pageSizeSelector.types';
 
-export function PageSizeSelector({ pageSize, onChange }: PageSizeSelectorProps) {
+const PageSizeSelector = ({ pageSize, onChange }: PageSizeSelectorProps) => {
   return (
     <Form.Group controlId="pageSizeSelect" className="d-inline-block">
       <Form.Label className="visually-hidden">Page Size</Form.Label>
@@ -18,4 +18,6 @@ export function PageSizeSelector({ pageSize, onChange }: PageSizeSelectorProps) 
       </Form.Select>
     </Form.Group>
   );
-}
+};
+
+export default PageSizeSelector;

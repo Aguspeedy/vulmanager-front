@@ -4,7 +4,7 @@ import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router';
 
 import { login } from '../../services/authService';
-import { ErrorBanner } from '../../components/error-banner/errorBanner';
+import ErrorBanner from '../../components/error-banner/errorBanner';
 
 const SignInPage = (): JSX.Element => {
   const navigate = useNavigate();

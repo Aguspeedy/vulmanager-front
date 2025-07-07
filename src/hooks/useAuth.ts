@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchUserSession } from '../services/authService';
 
-export const useAuth = () => {
+const useAuth = () => {
   return useQuery({
     queryKey: ['auth', 'me'],
     queryFn: fetchUserSession,
@@ -12,3 +12,5 @@ export const useAuth = () => {
     },
   });
 };
+
+export default useAuth;
