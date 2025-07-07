@@ -1,4 +1,4 @@
-import { useAuth } from '../../hooks/useAuth';
+import useAuth from '../../hooks/useAuth';
 import { Navigate } from 'react-router';
 import { Spinner } from 'react-bootstrap';
 

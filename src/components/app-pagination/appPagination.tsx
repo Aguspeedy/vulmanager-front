@@ -4,7 +4,7 @@ import Pagination from 'react-bootstrap/Pagination';
 import './appPagination.css';
 import { AppPaginationProps } from './appPagination.types';
 
-export function AppPagination({ currentPage, totalPages, onPageChange }: AppPaginationProps) {
+const AppPagination = ({ currentPage, totalPages, onPageChange }: AppPaginationProps) => {
   const pages: React.ReactNode[] = [];
 
   const start = Math.max(1, currentPage);
@@ -53,4 +53,6 @@ export function AppPagination({ currentPage, totalPages, onPageChange }: AppPagi
       />
     </Pagination>
   );
-}
+};
+
+export default AppPagination;

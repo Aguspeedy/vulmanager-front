@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import * as Enums from '../../../../types/enums.types';
 import { VulnerabilitiesToolbarProps } from './vulnerabilitiesToolbar.types';
 
-export const VulnerabilitiesToolbar = ({
+const VulnerabilitiesToolbar = ({
   sortBy,
   sortOrder,
   filters,
@@ -100,3 +100,5 @@ export const VulnerabilitiesToolbar = ({
     </Form>
   );
 };
+
+export default VulnerabilitiesToolbar;

@@ -9,12 +9,12 @@ import {
   VulnerabilityModalContextProvider,
   useVulnerabilityModal,
 } from '../../contexts/vulnerabilitiesModalContext';
-import { AppPagination } from '../../components/app-pagination/appPagination';
-import { useDebounce } from '../../hooks/useDebounce';
+import AppPagination from '../../components/app-pagination/appPagination';
+import useDebounce from '../../hooks/useDebounce';
 import { Filters } from '../../types/filters.types';
-import { VulnerabilitiesToolbar } from './components/vulnerabilities-toolbar/vulnerabilitiesToolbar';
-import { PageSizeSelector } from '../../components/page-size-selector/pageSizeSelector';
-import { useLogout } from '../../hooks/useLogout';
+import VulnerabilitiesToolbar from './components/vulnerabilities-toolbar/vulnerabilitiesToolbar';
+import PageSizeSelector from '../../components/page-size-selector/pageSizeSelector';
+import AppNavbar from '../../components/app-navbar/appNavbar';
 
 const Vulnerabilities = (): React.JSX.Element => {
   const { openEditor } = useVulnerabilityModal();
@@ -24,8 +24,6 @@ const Vulnerabilities = (): React.JSX.Element => {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | undefined>('desc');
   const [filters, setFilters] = useState<Filters>({});
   const debouncedFilters = useDebounce(filters, 500);
-
-  const { mutate: logout } = useLogout();
 
   const { data, isLoading, isError, error, isFetching } = useQuery<
     VulnerabilityResponseType,
@@ -39,18 +37,9 @@ const Vulnerabilities = (): React.JSX.Element => {
 
   return (
     <>
+      <AppNavbar />
       <div className="px-5 py-4 w-100">
-        <div className="d-flex justify-content-between">
-          <h1 className="mb-2">Vulnerabilities</h1>
-          <Button
-            size="sm"
-            className="border-0 sm-height"
-            variant="danger"
-            onClick={() => logout()}
-          >
-            Logout
-          </Button>
-        </div>
+        <h1 className="mb-2">Vulnerabilities</h1>
         <hr className="mt-0 mb-4" />
         <div className="d-flex justify-content-between align-items-center mb-3">
           <VulnerabilitiesToolbar
