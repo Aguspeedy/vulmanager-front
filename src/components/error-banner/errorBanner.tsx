@@ -4,7 +4,7 @@ import { Alert } from 'react-bootstrap';
 import './errorBanner.css';
 import { ErrorBannerProps } from './errorBanner.types';
 
-export const ErrorBanner = ({ message }: ErrorBannerProps) => {
+const ErrorBanner = ({ message }: ErrorBannerProps) => {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
@@ -28,3 +28,5 @@ export const ErrorBanner = ({ message }: ErrorBannerProps) => {
     </Alert>
   );
 };
+
+export default ErrorBanner;
