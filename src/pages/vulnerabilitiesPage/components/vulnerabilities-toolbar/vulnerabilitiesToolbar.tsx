@@ -1,7 +1,7 @@
 import { JSX } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-import * as Enums from '../../../../types/enums';
+import * as Enums from '../../../../types/enums.types';
 import { VulnerabilitiesToolbarProps } from './vulnerabilitiesToolbar.types';
 
 export const VulnerabilitiesToolbar = ({

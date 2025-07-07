@@ -1,4 +1,4 @@
-import { SeverityLevel, StatusType } from './enums';
+import { SeverityLevel, StatusType } from './enums.types';
 
 export interface Filters {
   searchFilter?: string;

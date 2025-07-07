@@ -1,5 +1,5 @@
 import api from './client';
-import type { Vulnerability, VulnerabilityInsert } from '../types/models/vulnerability';
+import type { Vulnerability, VulnerabilityInsert } from '../types/models/vulnerability.types';
 import { VulnerabilityResponseType } from '../types/vulnerabilityResponse.types';
 
 export async function fetchVulnerabilities(
